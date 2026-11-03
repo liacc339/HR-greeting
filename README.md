@@ -10,20 +10,28 @@
 
 ## 安装到 Codex
 
-在 Codex 对话中调用内置的 `skill-installer`，请它从本仓库的 [`skills/jd-hr-greeting`](skills/jd-hr-greeting/SKILL.md) 目录安装：
+在 Codex 对话中调用内置的 `skill-installer`，请它从本仓库的 [`skills/hr-greeting`](skills/hr-greeting/SKILL.md) 目录安装：
 
-> 使用 $skill-installer 从 https://github.com/liacc339/jd-hr-greeting/tree/main/skills/jd-hr-greeting 安装这个 skill。
+> 使用 $skill-installer 从 https://github.com/liacc339/HR-greeting/tree/main/skills/hr-greeting 安装这个 skill。
 
-安装后，如果技能没有立即出现在列表中，重启 Codex。也可以按所用工具的 [Agent Skills 安装说明](https://learn.chatgpt.com/docs/build-skills)，手动安装整个 `skills/jd-hr-greeting` 文件夹；只复制 `SKILL.md` 会遗漏界面元数据。其他支持 Agent Skills 的工具可按各自文档安装，具体功能取决于宿主工具是否能读图、读简历和联网搜索。
+安装后，如果技能没有立即出现在列表中，重启 Codex。也可以按所用工具的 [Agent Skills 安装说明](https://learn.chatgpt.com/docs/build-skills)，手动安装整个 `skills/hr-greeting` 文件夹；只复制 `SKILL.md` 会遗漏 Codex 的界面元数据。
+
+## 安装到 WorkBuddy
+
+1. 下载仓库中的 [`hr-greeting-workbuddy.zip`](packages/hr-greeting-workbuddy.zip) 到电脑上。
+2. 在 WorkBuddy 左侧打开「专家·技能·连接器」→「技能」，点击「添加技能」→「上传技能」，选择下载的 ZIP 文件。导入后，可在「已安装」中查看。
+3. 上传岗位详情页截图和简历，在对话中说：“使用 hr-greeting 分析这个岗位与我的匹配和缺口，并写一版打招呼草稿。”
+
+这是 WorkBuddy 的**本地上传**方式，不代表本技能已上架 WorkBuddy 技能市场。操作入口依据 [WorkBuddy 官方技能说明](https://www.workbuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market)。是否能核查公司与最新职位信息，取决于你在 WorkBuddy 中可用的联网能力。
 
 ## 两步使用
 
 1. **截图岗位详情页。** 尽量包含公司名称、岗位职责和任职要求；长页面可分几张截图。
 2. **附上简历并调用 skill。** 简历可用 PDF、图片或文字。无需另填经历、薪资或偏好问卷。可以先遮住电话、住址等不影响判断的个人信息。
 
-在对话中点名 `$jd-hr-greeting`，例如：
+在 Codex 对话中点名 `$hr-greeting`，例如：
 
-> 使用 $jd-hr-greeting 分析我上传的岗位详情页截图和简历。
+> 使用 $hr-greeting 分析我上传的岗位详情页截图和简历。
 
 两份材料能读清时，skill 会直接开始。如果页面截断或简历缺少会改变结论的资格信息，它会说明具体缺什么；不会为了凑齐输入项反复提问。只提供岗位信息时，它仍能先分析岗位，但不能可靠判断个人匹配，也不会编造第一人称经历。
 
@@ -47,10 +55,10 @@
 
 ## 项目文件
 
-- [`skills/jd-hr-greeting/SKILL.md`](skills/jd-hr-greeting/SKILL.md)：完整工作规则。
-- [`skills/jd-hr-greeting/agents/openai.yaml`](skills/jd-hr-greeting/agents/openai.yaml)：Codex 中的显示名称和默认提示。
+- [`skills/hr-greeting/SKILL.md`](skills/hr-greeting/SKILL.md)：完整工作规则。
+- [`skills/hr-greeting/agents/openai.yaml`](skills/hr-greeting/agents/openai.yaml)：Codex 中的显示名称和默认提示。
+- [`packages/hr-greeting-workbuddy.zip`](packages/hr-greeting-workbuddy.zip)：用于 WorkBuddy 本地上传的技能包。
 - [`examples/README.md`](examples/README.md)：虚构案例。
 - [`LICENSE`](LICENSE)：MIT 许可证。
 
 欢迎提交 issue 反馈判断错误、岗位类型遗漏或不清楚的使用步骤。反馈前请脱敏。这个仓库公开的是通用版，不包含任何个人简历或私人版 skill。
-

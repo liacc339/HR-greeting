@@ -1,5 +1,4 @@
 interface:
   display_name: "岗位评估与打招呼"
   short_description: "核实岗位、分析匹配与缺口，写有证据的招聘平台开场消息"
-  default_prompt: "使用 $jd-hr-greeting 分析我上传的岗位详情页截图和简历，给出匹配、缺口、投递建议和打招呼草稿。"
-
+  default_prompt: "使用 $hr-greeting 分析我上传的岗位详情页截图和简历，给出匹配、缺口、投递建议和打招呼草稿。"
