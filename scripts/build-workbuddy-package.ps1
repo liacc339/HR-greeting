@@ -16,7 +16,7 @@ display_name_en: HR Greeting
 description: Analyze a Chinese job listing against a resume and draft an evidence-based recruiter greeting.
 description_zh: 核实岗位、分析简历匹配与缺口，并撰写招聘平台打招呼草稿。
 description_en: Check a job listing, assess resume fit and gaps, and draft a recruiter greeting.
-version: 1.0.1
+version: 1.0.2
 author: liacc339
 ---
 '@
